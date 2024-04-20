@@ -5,10 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Booking Form</title>
     <link rel="stylesheet" href="styles15.css">
+    <style>
+        /* Add your custom styles here */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .booking-form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-    
         <form class="booking-form" id="bookingForm">
             <h2>Book Your Trip</h2>
             <div class="form-group">
@@ -20,12 +65,129 @@
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="destination">Destination:</label>
-                <input type="text" id="destination" name="destination" required>
+                <label for="fromCountry">From City/Country:</label>
+                <select id="fromCountry" name="fromCountry" required>
+                    <option value="">Select From City/Country</option>
+                    <!-- Add more options here -->
+                    <option value="New York, USA">New York, USA</option>
+                    <option value="London, UK">London, UK</option>
+                    <option value="Paris, France">Paris, France</option>
+                    <option value="Tokyo, Japan">Tokyo, Japan</option>
+                    <option value="Sydney, Australia">Sydney, Australia</option>
+                    <option value="Mumbai, India">Mumbai, India</option>
+                    <option value="Delhi, India">Delhi, India</option>
+                    <option value="Kolkata, India">Kolkata, India</option>
+                    <option value="Chennai, India">Chennai, India</option>
+                    <option value="Bangalore, India">Bangalore, India</option>
+                    <option value="Berlin, Germany">Berlin, Germany</option>
+                    <option value="Madrid, Spain">Madrid, Spain</option>
+                    <option value="Rome, Italy">Rome, Italy</option>
+                    <option value="Moscow, Russia">Moscow, Russia</option>
+                    <option value="Beijing, China">Beijing, China</option>
+                    <option value="Bangkok, Thailand">Bangkok, Thailand</option>
+                    <option value="Seoul, South Korea">Seoul, South Korea</option>
+                    <option value="Istanbul, Turkey">Istanbul, Turkey</option>
+                    <option value="Cairo, Egypt">Cairo, Egypt</option>
+                    <option value="Lagos, Nigeria">Lagos, Nigeria</option>
+                    <option value="Mexico City, Mexico">Mexico City, Mexico</option>
+                    <option value="Lima, Peru">Lima, Peru</option>
+                    <option value="Santiago, Chile">Santiago, Chile</option>
+                    <option value="Toronto, Canada">Toronto, Canada</option>
+                    <option value="Sydney, Australia">Sydney, Australia</option>
+                    <option value="Bangalore, India">Bangalore, India</option>
+                    <option value="Buenos Aires, Argentina">Buenos Aires, Argentina</option>
+                    <option value="Mumbai, India">Mumbai, India</option>
+                    <option value="San Francisco, USA">San Francisco, USA</option>
+                    <option value="Osaka, Japan">Osaka, Japan</option>
+                    <option value="Cairo, Egypt">Cairo, Egypt</option>
+                    <option value="Mumbai, India">Mumbai, India</option>
+                    <option value="Jakarta, Indonesia">Jakarta, Indonesia</option>
+                    <option value="Kolkata, India">Kolkata, India</option>
+                    <option value="Dhaka, Bangladesh">Dhaka, Bangladesh</option>
+                    <option value="Karachi, Pakistan">Karachi, Pakistan</option>
+                    <option value="Shanghai, China">Shanghai, China</option>
+                    <option value="Lahore, Pakistan">Lahore, Pakistan</option>
+                    <option value="Bangalore, India">Bangalore, India</option>
+                    <option value="Chennai, India">Chennai, India</option>
+                    <option value="Bangkok, Thailand">Bangkok, Thailand</option>
+                    <option value="Lagos, Nigeria">Lagos, Nigeria</option>
+                    <option value="Istanbul, Turkey">Istanbul, Turkey</option>
+                    <option value="Rio de Janeiro, Brazil">Rio de Janeiro, Brazil</option>
+                    <option value="Moscow, Russia">Moscow, Russia</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="toCountry">To City/Country:</label>
+                <select id="toCountry" name="toCountry" required>
+                    <option value="">Select To City/Country</option>
+                    <!-- Add more options here -->
+                    <option value="Los Angeles, USA">Los Angeles, USA</option>
+                    <option value="Rome, Italy">Rome, Italy</option>
+                    <option value="Beijing, China">Beijing, China</option>
+                    <option value="Cairo, Egypt">Cairo, Egypt</option>
+                    <option value="Rio de Janeiro, Brazil">Rio de Janeiro, Brazil</option>
+                    <option value="Ahmedabad, India">Ahmedabad, India</option>
+                    <option value="Hyderabad, India">Hyderabad, India</option>
+                    <option value="Pune, India">Pune, India</option>
+                    <option value="Jaipur, India">Jaipur, India</option>
+                    <option value="Lucknow, India">Lucknow, India</option>
+                    <option value="Paris, France">Paris, France</option>
+                    <option value="Sydney, Australia">Sydney, Australia</option>
+                    <option value="Bangalore, India">Bangalore, India</option>
+                    <option value="Mumbai, India">Mumbai, India</option>
+                    <option value="Barcelona, Spain">Barcelona, Spain</option>
+                    <option value="Berlin, Germany">Berlin, Germany</option>
+                    <option value="Madrid, Spain">Madrid, Spain</option>
+                    <option value="Tokyo, Japan">Tokyo, Japan</option>
+                    <option value="Seoul, South Korea">Seoul, South Korea</option>
+                    <option value="Istanbul, Turkey">Istanbul, Turkey</option>
+                    <option value="Cairo, Egypt">Cairo, Egypt</option>
+                    <option value="Lagos, Nigeria">Lagos, Nigeria</option>
+                    <option value="Mexico City, Mexico">Mexico City, Mexico</option>
+                    <option value="Lima, Peru">Lima, Peru</option>
+                    <option value="Santiago, Chile">Santiago, Chile</option>
+                    <option value="Toronto, Canada">Toronto, Canada</option>
+                    <option value="Sydney, Australia">Sydney, Australia</option>
+                    <option value="Bangalore, India">Bangalore, India</option>
+                    <option value="Buenos Aires, Argentina">Buenos Aires, Argentina</option>
+                    <option value="Mumbai, India">Mumbai, India</option>
+                    <option value="San Francisco, USA">San Francisco, USA</option>
+                    <option value="Osaka, Japan">Osaka, Japan</option>
+                    <option value="Cairo, Egypt">Cairo, Egypt</option>
+                    <option value="Mumbai, India">Mumbai, India</option>
+                    <option value="Jakarta, Indonesia">Jakarta, Indonesia</option>
+                    <option value="Kolkata, India">Kolkata, India</option>
+                    <option value="Dhaka, Bangladesh">Dhaka, Bangladesh</option>
+                    <option value="Karachi, Pakistan">Karachi, Pakistan</option>
+                    <option value="Shanghai, China">Shanghai, China</option>
+                    <option value="Lahore, Pakistan">Lahore, Pakistan</option>
+                    <option value="Bangalore, India">Bangalore, India</option>
+                    <option value="Chennai, India">Chennai, India</option>
+                    <option value="Bangkok, Thailand">Bangkok, Thailand</option>
+                    <option value="Lagos, Nigeria">Lagos, Nigeria</option>
+                    <option value="Istanbul, Turkey">Istanbul, Turkey</option>
+                    <option value="Rio de Janeiro, Brazil">Rio de Janeiro, Brazil</option>
+                    <option value="Moscow, Russia">Moscow, Russia</option>
+                    <!-- Add more options as needed -->
+                </select>
             </div>
             <div class="form-group">
                 <label for="date">Travel Date:</label>
                 <input type="date" id="date" name="date" required>
+            </div>
+            <!-- Additional Fields -->
+            <div class="form-group">
+                <label for="arrivalTime">Arrival Time:</label>
+                <input type="time" id="arrivalTime" name="arrivalTime">
+            </div>
+            <div class="form-group">
+                <label for="departureDate">Departure Date:</label>
+                <input type="date" id="departureDate" name="departureDate">
+            </div>
+            <div class="form-group">
+                <label for="departureTime">Departure Time:</label>
+                <input type="time" id="departureTime" name="departureTime">
             </div>
             <div class="form-group">
                 <button type="submit">Book Now</button>
@@ -33,44 +195,52 @@
         </form>
     </div>
 
-    <script src="script.js">
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var fromCountry = document.getElementById("fromCountry").value;
+            var toCountry = document.getElementById("toCountry").value;
+            var date = document.getElementById("date").value;
+            var arrivalTime = document.getElementById("arrivalTime").value;
+            var departureDate = document.getElementById("departureDate").value;
+            var departureTime = document.getElementById("departureTime").value;
+            var errorMessage = "";
 
-document.getElementById("bookingForm").addEventListener("submit", function(event) {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var destination = document.getElementById("destination").value;
-    var date = document.getElementById("date").value;
-    var errorMessage = "";
+            if (name.trim() === "") {
+                errorMessage += "Please enter your name.\n";
+            }
 
-    if (name.trim() === "") {
-        errorMessage += "Please enter your name.\n";
-    }
+            if (email.trim() === "") {
+                errorMessage += "Please enter your email.\n";
+            } else if (!isValidEmail(email)) {
+                errorMessage += "Please enter a valid email address.\n";
+            }
 
-    if (email.trim() === "") {
-        errorMessage += "Please enter your email.\n";
-    } else if (!isValidEmail(email)) {
-        errorMessage += "Please enter a valid email address.\n";
-    }
+            if (fromCountry.trim() === "") {
+                errorMessage += "Please select your origin city/country.\n";
+            }
 
-    if (destination.trim() === "") {
-        errorMessage += "Please enter your destination.\n";
-    }
+            if (toCountry.trim() === "") {
+                errorMessage += "Please select your destination city/country.\n";
+            }
 
-    if (date.trim() === "") {
-        errorMessage += "Please select your travel date.\n";
-    }
+            if (date.trim() === "") {
+                errorMessage += "Please select your travel date.\n";
+            }
 
-    if (errorMessage !== "") {
-        alert(errorMessage);
-        event.preventDefault();
-    }
-});
+            // You can add more validation for the new fields if needed
 
-function isValidEmail(email) {
-    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
+            if (errorMessage !== "") {
+                alert(errorMessage);
+                event.preventDefault();
+            }
+        });
 
+        function isValidEmail(email) {
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
     </script>
 </body>
 </html>
